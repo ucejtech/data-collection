@@ -2,6 +2,7 @@
   <div class="challenge">
     <img id="company-logo" alt="Vue logo" src="../../assets/logo.png" />
       <h1>Debt Collection</h1>
+      <h5>You can login using any email available in the accounts provided in api/db.json</h5>
     <div class="auth d-flex align-center justify-center">
       <form class="auth__form mt-4" @submit.prevent="signIn">
           <input

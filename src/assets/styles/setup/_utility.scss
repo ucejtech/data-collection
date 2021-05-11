@@ -1,0 +1,131 @@
+.d-flex {
+  display: flex;
+
+  &.flex-column {
+    flex-direction: column;
+  }
+  &.flex-wrap {
+    flex-wrap: wrap;
+  }
+  &.justify-space-between {
+    justify-content: space-between;
+  }
+  &.justify-center {
+    justify-content: center;
+  }
+  &.justify-end {
+    justify-content: flex-end;
+  }
+}
+.d-grid {
+  display: grid;
+  &.align-center {
+    align-items: center;
+  }
+  &.justify-center {
+    justify-items: center;
+  }
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.clickable {
+  cursor: pointer '';
+}
+
+.transition {
+  transition-duration: 0.8s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+.btn {
+  padding: 5px 30px;
+  @include font(fontFamily(DM-Sans), fontWeight(medium));
+  border: unset;
+  border-radius: 8px;
+  height: 45px;
+  outline: unset;
+}
+
+// ::-webkit-scrollbar {
+//   width: 5px;
+// }
+
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   background: transparent;
+// }
+
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   width: 2px !important;
+//   border-radius: 10px;
+// }
+
+/** 
+  * generate padding and margin utility classes
+  * example: mt-14, pt-14, mt-sm-14 or pt-sm-14
+  */
+@each $prop, $letter in (margin: m, padding: p) {
+  @for $space from 0 to 19 {
+    $size: #{$space * $space-multiplier}px;
+    .#{$letter}x-#{$space} {
+      #{$prop}-left: $size;
+      #{$prop}-right: $size;
+    }
+    .#{$letter}y-#{$space} {
+      #{$prop}-top: $size;
+      #{$prop}-bottom: $size;
+    }
+    .#{$letter}a-#{$space} {
+      #{$prop}: $size;
+    }
+    @each $direction, $d in $xy-border {
+      .#{$letter}#{$d}-#{$space} {
+        #{$prop}-#{$direction}: #{$size};
+      }
+      @each $break, $breakpoint in $breakpoints {
+        .#{$letter}#{$d}-#{$break}-#{$space} {
+          @include breakpoint($break) {
+            #{$prop}-#{$direction}: #{$size};
+          }
+        }
+        .#{$letter}x-#{$break}-#{$space} {
+          @include breakpoint($break) {
+            #{$prop}-left: $size;
+            #{$prop}-right: $size;
+          }
+        }
+        .#{$letter}y-#{$break}-#{$space} {
+          @include breakpoint($break) {
+            #{$prop}-top: $size;
+            #{$prop}-bottom: $size;
+          }
+        }
+      }
+      @each $break, $breakpoint in $breakpointsAndDown {
+        .#{$letter}#{$d}-#{$break}-#{$space} {
+          @include breakpoint($break) {
+            #{$prop}-#{$direction}: #{$size};
+          }
+        }
+        .#{$letter}x-#{$break}-#{$space} {
+          @include breakpoint($break) {
+            #{$prop}-left: $size;
+            #{$prop}-right: $size;
+          }
+        }
+        .#{$letter}y-#{$break}-#{$space} {
+          @include breakpoint($break) {
+            #{$prop}-top: $size;
+            #{$prop}-bottom: $size;
+          }
+        }
+      }
+    }
+  }
+}

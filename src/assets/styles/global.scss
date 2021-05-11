@@ -1,0 +1,22 @@
+@import "./setup/variables";
+@import "./setup/mixins";
+@import "./setup/functions";
+@import "./setup/utility";
+
+// Global Style
+body {
+  @include font(fontFamily(DM-Sans), fontWeight(regular));
+  margin: 0 auto;
+  background: linear-gradient(180deg, #ffffff 0%, #ccd9ff 100%);
+}
+
+@include breakpoint(lg) {
+  body {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f7f9ff 18.82%,
+      #fafbff 100%
+    );
+  }
+}

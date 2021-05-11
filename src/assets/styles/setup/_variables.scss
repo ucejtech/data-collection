@@ -1,0 +1,78 @@
+// Brand Colors Styles
+$primary: (
+  dark-blue: #11203f,
+  navy-blue: #023059,
+  blue: #034cbc,
+  grey: #333333,
+  white: #ffffff
+);
+
+$interactions: (
+  error: #b71c1c,
+  info: #29c5d8,
+  success: #36c985,
+  warning: #f2c438
+);
+
+$secondary: (
+  green: #22b02e,
+  yellow: #ffd965,
+  red: #c5292a
+);
+
+$grey: (
+  grey1: #8d9091,
+  grey11: #aab7bf,
+  grey2: #cccccc,
+  grey3: #efefef,
+  grey4: #fbfbfb
+);
+
+// Text Styles
+$heading: (
+  h1: 40px,
+  h2: 40px,
+  h3: 24px,
+  h4: 16px
+);
+
+$body: (
+  p16: 16px,
+  p14: 14px
+);
+
+// Font
+$font-family: (
+  DM-Sans: (
+    'DM Sans',
+    sans-serif
+  )
+);
+
+// Font Weights
+$font-weights: (
+  regular: 400,
+  medium: 500,
+  bold: 700
+);
+
+$space-multiplier: 4;
+$xy-border: (
+  top: t,
+  bottom: b,
+  left: l,
+  right: r
+);
+
+$breakpoints: (
+  xs: 500px,
+  sm: 500px,
+  md: 992px,
+  lg: 1024px
+);
+
+$breakpointsAndDown: (
+  sm-and-down: 600px,
+  md-and-down: 992px,
+  lg-and-down: 1024px
+);
